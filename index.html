@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healer: Student Wellness Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'kintsugi-gold': '#DAA520',
+              'calm-blue': {
+                '50': '#f0f9ff',
+                '100': '#e0f2fe',
+                '200': '#bae6fd',
+                '300': '#7dd3fc',
+                '400': '#38bdf8',
+                '500': '#0ea5e9',
+                '600': '#0284c7',
+                '700': '#0369a1',
+                '800': '#075985',
+                '900': '#0c4a6e',
+              },
+              'calm-green': {
+                '50': '#f0fdf4',
+                '100': '#dcfce7',
+                '200': '#bbf7d0',
+                '300': '#86efac',
+                '400': '#4ade80',
+                '500': '#22c55e',
+                '600': '#16a34a',
+                '700': '#15803d',
+                '800': '#166534',
+                '900': '#14532d',
+              },
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'kintsugi-pulse-1': 'kintsugi-pulse-1 6s ease-in-out infinite',
+              'kintsugi-pulse-2': 'kintsugi-pulse-2 6s ease-in-out infinite',
+              'kintsugi-pulse-3': 'kintsugi-pulse-3 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'kintsugi-pulse-1': {
+                '0%, 100%': { translate: '0 0', rotate: '0deg' },
+                '50%': { translate: '-2px -3px', rotate: '-1deg' },
+              },
+              'kintsugi-pulse-2': {
+                '0%, 100%': { translate: '0 0', rotate: '0deg' },
+                '50%': { translate: '3px -1px', rotate: '0.5deg' },
+              },
+              'kintsugi-pulse-3': {
+                '0%, 100%': { translate: '0 0', rotate: '0deg' },
+                '50%': { translate: '-1px 4px', rotate: '1deg' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
