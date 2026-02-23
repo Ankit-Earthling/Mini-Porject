@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { HashRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -9,6 +10,7 @@ import ArticlePage from './pages/ArticlePage';
 import ContactPage from './pages/ContactPage';
 import FeedbackPage from './pages/FeedbackPage';
 import FaqPage from './pages/FaqPage';
+import ArchitecturePage from './pages/ArchitecturePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PositivityWallPage from './pages/PositivityWallPage';
@@ -33,7 +35,6 @@ import ActivitiesPage, {
 } from './pages/ActivitiesPage';
 import SchedulePage from './pages/SchedulePage';
 
-// A simple wrapper to check for admin session
 const ProtectedAdminRoute = ({ children }: { children?: React.ReactNode }) => {
   const isAuthenticated = sessionStorage.getItem('healer_admin_session') === 'active';
   return isAuthenticated ? <>{children}</> : <Navigate to="/admin/login" replace />;
@@ -46,7 +47,6 @@ const PageContent = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {!isAdminPage && <Header />}
-      {/* The page-transition-wrapper class ensures a breeze-wipe effect on every route change */}
       <main 
         key={location.pathname} 
         className={`flex-grow page-transition-wrapper ${!isAdminPage ? 'pt-24 md:pt-32' : ''}`}
@@ -62,8 +62,8 @@ const PageContent = () => {
           <Route path="/activities/journaling" element={<WellbeingJournalingPage />} />
           <Route path="/positivity-wall" element={<PositivityWallPage />} />
           <Route path="/activities/yoga" element={<WellbeingYogaPage />} />
+          <Route path="/architecture" element={<ArchitecturePage />} />
           
-          {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/dashboard" element={<ProtectedAdminRoute><AdminDashboardPage /></ProtectedAdminRoute>} />
           <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
